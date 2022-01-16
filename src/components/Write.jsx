@@ -13,7 +13,7 @@ const styles = {
   }
 }
 
-function Write() {
+function Write(props) {
   const { handleSubmit, control, formState: { errors }, reset } = useForm({
     defaultValues: {
       title: '',
@@ -85,7 +85,7 @@ function Write() {
   };
 
   return (
-    <div style={{ width: "50vw" }}>
+    <div style={{ width: `${props?.width || "60vw"}`}}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginBottom: "20px"}}>
           <label style={styles.label}>Title</label>
@@ -117,7 +117,7 @@ function Write() {
           disabled={isFetching}
           style={{ marginTop: "10px", fontWeight: 500 }}
         >
-          Mint
+          {props?.buttonName || "Mint"}
         </Button>
       </form>
     </div>
