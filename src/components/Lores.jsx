@@ -1,7 +1,7 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
-import { Card, Image, Tooltip, Modal, Input, Skeleton } from "antd";
-import { FileSearchOutlined, SendOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Card, Image, Tooltip, Skeleton } from "antd";
+import { FileSearchOutlined } from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 import { useNFT } from "hooks/useNFT";
@@ -23,7 +23,7 @@ const styles = {
 
 function Lores() {
   const { assets } = useNFT();
-  const { Moralis, chainId } = useMoralis();
+  const { chainId } = useMoralis();
   const { verifyMetadata } = useVerifyMetadata();
 
   return (
