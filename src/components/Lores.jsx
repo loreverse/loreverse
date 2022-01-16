@@ -23,7 +23,7 @@ const styles = {
 
 function Lores() {
   const { assets } = useNFT();
-  const { Moralis, chainId } = useMoralis();
+  const { chainId } = useMoralis();
   const { verifyMetadata } = useVerifyMetadata();
 
   return (
