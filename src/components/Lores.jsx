@@ -27,12 +27,19 @@ function Lores() {
   const { chainId } = useMoralis();
   const [visible, setVisibility] = useState(false);
   const [tokenId, setTokenId] = useState('');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
   const { verifyMetadata } = useVerifyMetadata();
 
   const handleForkClick = (nft) => {
-    setTokenId(nft.token_id)
+    const data = JSON.parse(nft.metadata)
+    setTokenId(nft.token_id);
+    setTitle(data.title);
+    setBody(data.body)
     setVisibility(true);
   };
+
+
 
   return (
     <div style={{ padding: "15px", maxWidth: "1030px", width: "100%" }}>
@@ -44,7 +51,7 @@ function Lores() {
               nft = verifyMetadata(nft);
               const image = JSON.parse(nft.metadata).image;
               return (
-                <Badge count={10} overflowCount={999} color={"blue"} key={index}>
+                <Badge count={1} overflowCount={999} color={"blue"} key={index}>
                   <Card
                     hoverable
                     actions={[
@@ -85,7 +92,7 @@ function Lores() {
         footer={null}
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Write width="90%" buttonName="Fork" />
+          <Write width="90%" buttonName="Fork" title={title} body={body} />
         </div>
       </Modal>
     </div>
