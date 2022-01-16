@@ -66,11 +66,12 @@ function Write(props) {
         metadata: metadata,
         title: inputData.title,
         body: inputData.body,
-        originalTokenId: 0,
+        originalTokenId: props?.tokenId ? props?.tokenId : 0,
       },
     }
 
     await fetch({ params: options })
+    console.log(options.params.originalTokenId)
     if (data) {
       console.log(data)
     }

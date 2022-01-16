@@ -90,7 +90,7 @@ function Lores() {
         footer={null}
       >
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Write width="90%" buttonName="Fork" title={title} body={body} />
+          <Write width="90%" buttonName="Fork" title={title} body={body} tokenId={tokenId} />
         </div>
       </Modal>
     </div>
