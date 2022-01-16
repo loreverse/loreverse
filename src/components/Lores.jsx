@@ -39,8 +39,6 @@ function Lores() {
     setVisibility(true);
   };
 
-
-
   return (
     <div style={{ padding: "15px", maxWidth: "1030px", width: "100%" }}>
       <div style={styles.NFTs}>
