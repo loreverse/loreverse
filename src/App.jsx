@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import Account from "components/Account/Account";
 import Chains from "components/Chains";
 import Lores from "components/Lores";
+import Write from "components/Write";
 import { Layout } from "antd";
 import "antd/dist/antd.css";
 import "./style.css";
-import Text from "antd/lib/typography/Text";
 import MenuItems from "./components/MenuItems";
-const { Header, Footer } = Layout;
+const { Header } = Layout;
 
 const styles = {
   content: {
@@ -67,6 +67,9 @@ const App = ({ isServerInfo }) => {
             <Route path="/lores">
               <Lores />
             </Route>
+            <Route path="/write">
+              <Write />
+            </Route>
             <Route path="/">
               <Redirect to="/lores" />
             </Route>
@@ -76,18 +79,6 @@ const App = ({ isServerInfo }) => {
           </Switch>
         </div>
       </Router>
-      <Footer style={{ textAlign: "center" }}>
-        <Text style={{ display: "block" }}>
-          📖 Read more about{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://moralis.io?utm_source=boilerplatehosted&utm_medium=todo&utm_campaign=ethereum-boilerplat"
-          >
-            Moralis
-          </a>
-        </Text>
-      </Footer>
     </Layout>
   );
 };
