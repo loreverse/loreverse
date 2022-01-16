@@ -16,8 +16,8 @@ const styles = {
 function Write(props) {
   const { handleSubmit, control, formState: { errors }, reset } = useForm({
     defaultValues: {
-      title: '',
-      body: ''
+      title: props?.title,
+      body: props?.body
     }
   });
 
