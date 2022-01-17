@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 
-const contractAddress = "0xd910E925bA1A4c3D4699a38786f1226cE3ED1904";
+const contractAddress = "0x091d46c138cBa2E7e9E9508b184C087371d279EF";
 
 export const useNFT = (params) => {
   const { token } = useMoralisWeb3Api();
